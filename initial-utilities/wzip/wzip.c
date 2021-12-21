@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     size_t curlen = 0;
 
     char *content = malloc(SIZE_LIMIT);
-    size_t len = 0;
+    size_t len = 1;
 
     for (int i = 1; i < argc; ++i) {
         FILE *fp = fopen(argv[i], "r");
@@ -25,8 +25,7 @@ int main(int argc, char *argv[]) {
         }
         fclose(fp);
     }
-    ++len;
-    
+
     int start = 0;
     for (int j = 0; j < len; ++j) {
         if (j > 0 && content[j-1] != content[j]) {
